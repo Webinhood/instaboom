@@ -9,7 +9,7 @@ interface FeaturesListProps {
 
 export function FeaturesList({ textColor }: FeaturesListProps) {
   const features = [
-    'Plano personalizado para seu nicho',
+    'Acesso um painel para seu negócio',
     'Estratégias comprovadas de crescimento',
     'Calendário de conteúdo para 7 dias',
     'Exemplos de legendas otimizadas',
@@ -21,7 +21,7 @@ export function FeaturesList({ textColor }: FeaturesListProps) {
       {features.map((feature, index) => (
         <HStack key={index} spacing={3}>
           <Icon as={CheckCircleIcon} boxSize={5} color="purple.400" />
-          <Text color={textColor}>{feature}</Text>
+          <Text color={textColor} fontSize="xl">{feature}</Text>
         </HStack>
       ))}
     </VStack>

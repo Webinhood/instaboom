@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Box bg={bgColor} minH="100vh" py={20}>
       <Container maxW="container.xl">
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems="center">
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems="start">
           {/* Lado Esquerdo - Apresentação */}
           <VStack spacing={8} align="start">
             <Card 
@@ -24,27 +24,28 @@ export default function Home() {
               w="full"
             >
               <CardBody>
-                <VStack spacing={6} align="start">
+
                   <Image
                     src="/img/instaboom.png"
                     alt="Instabrabo Logo"
-                    width={550}
+                    width={300}
                     height="auto"
-                    mb={4}
+                    mb={16}
                   />
                   <Heading 
                     as="h1" 
                     size="2xl" 
                     color={textColor}
                     lineHeight="shorter"
+                    mb={4}
                   >
-                    Conquiste 1000 seguidores no Instagram em 7 dias
+                    +1000 seguidores no Instagram em 7 dias!
                   </Heading>
-                  <Text fontSize="xl" color={subtitleColor}>
-                    Receba um plano personalizado e gratuito para crescer seu Instagram de forma orgânica e consistente
+                  <Text fontSize="3xl" color={subtitleColor} mb={8}>
+                    Receba um plano personalizado e gratuito para crescer seu Instagram:
                   </Text>
                   <FeaturesList textColor={textColor} />
-                </VStack>
+
               </CardBody>
             </Card>
 

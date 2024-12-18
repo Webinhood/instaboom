@@ -1,0 +1,69 @@
+
+[2024-12-18T14:57:23.363Z] Erro na chamada da OpenAI
+Context: {
+  "openAiError": {
+    "status": 400,
+    "headers": {
+      "access-control-expose-headers": "X-Request-ID",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "cf-cache-status": "DYNAMIC",
+      "cf-ray": "8f4001455ff37e03-GRU",
+      "connection": "keep-alive",
+      "content-length": "217",
+      "content-type": "application/json",
+      "date": "Wed, 18 Dec 2024 14:57:23 GMT",
+      "openai-organization": "user-plb4nsdrrn4oj3lokr8vo7so",
+      "openai-processing-ms": "20",
+      "openai-version": "2020-10-01",
+      "server": "cloudflare",
+      "set-cookie": "__cf_bm=b9ZwtefZ0t01AK0T0e8le26CrnG7Hr7WmVlP6zET4Ps-1734533843-1.0.1.1-vpqsv1CSfaz7GlVNIy3BCbjxwEOwzz1wBSmswVsQQC9z59u4pXAlbemhHtIzfqRq9I23eJqhUIsqbQFczkZC3g; path=/; expires=Wed, 18-Dec-24 15:27:23 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=3lZB.zCdytGwzAADTRKqCuTzEO_gSiOqS0rxe7DF2xA-1734533843387-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff",
+      "x-ratelimit-limit-requests": "10000",
+      "x-ratelimit-limit-tokens": "10000",
+      "x-ratelimit-remaining-requests": "9999",
+      "x-ratelimit-remaining-tokens": "9628",
+      "x-ratelimit-reset-requests": "8.64s",
+      "x-ratelimit-reset-tokens": "2.232s",
+      "x-request-id": "req_284bca52096389b67acdf9c897dfd310"
+    },
+    "request_id": "req_284bca52096389b67acdf9c897dfd310",
+    "error": {
+      "message": "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.",
+      "type": "invalid_request_error",
+      "param": "response_format",
+      "code": null
+    },
+    "code": null,
+    "param": "response_format",
+    "type": "invalid_request_error"
+  },
+  "userData": {
+    "email": "gardelin@wsebinhood.comg.br",
+    "area_atuacao": "Gastronomia",
+    "descricao": "Comida gostosa",
+    "objetivo": "vender",
+    "dificuldade": "Likes",
+    "instagram_link": "@comida"
+  }
+}
+================================================================================
+
+[2024-12-18T15:03:57.228Z] Erro ao salvar no Supabase
+Context: {
+  "supabaseError": {
+    "code": "42501",
+    "details": null,
+    "hint": null,
+    "message": "new row violates row-level security policy for table \"users\""
+  },
+  "userData": {
+    "email": "gardelin@webinhood.com.br",
+    "area_atuacao": "gastronomia",
+    "descricao": "gordinhos food",
+    "objetivo": "vender",
+    "dificuldade": "nada",
+    "instagram_link": "@gordinhosfood"
+  }
+}
+================================================================================

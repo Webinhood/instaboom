@@ -1,5 +1,5 @@
 'use client'
-import { Box, Container, SimpleGrid, VStack, Heading, Text, Card, CardBody } from '@chakra-ui/react'
+import { Box, Container, SimpleGrid, VStack, Heading, Text, Card, CardBody, Image } from '@chakra-ui/react'
 import SignupForm from '@/components/SignupForm'
 import { FeaturesList } from '@/components/FeaturesList'
 import { Testimonials } from '@/components/Testimonials'
@@ -25,6 +25,13 @@ export default function Home() {
             >
               <CardBody>
                 <VStack spacing={6} align="start">
+                  <Image
+                    src="/img/instaboom.png"
+                    alt="Instabrabo Logo"
+                    width={550}
+                    height="auto"
+                    mb={4}
+                  />
                   <Heading 
                     as="h1" 
                     size="2xl" 

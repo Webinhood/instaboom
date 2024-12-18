@@ -7,8 +7,16 @@ const outfit = Outfit({
 })
 
 export const metadata = {
-  title: 'InstaBoom - 1000 Seguidores em 7 Dias',
-  description: 'Alcance 1000 seguidores reais no Instagram em apenas 7 dias com nosso método comprovado.',
+  title: 'Instabrabo - Conquiste 1000 seguidores no Instagram em 7 dias',
+  description: 'Receba um plano personalizado e gratuito para crescer no Instagram de forma orgânica e consistente.',
+  icons: {
+    icon: [
+      {
+        url: '/img/favicon-instaboom.svg',
+        type: 'image/svg+xml',
+      }
+    ]
+  }
 }
 
 export default function RootLayout({

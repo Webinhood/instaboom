@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     console.log('URL do plano:', page_url)
 
     const data = await resend.emails.send({
-      from: 'Webinhood - Instaboom <contato@webinhood.com.br>',
+      from: 'Webinhood - Instabrabo <contato@webinhood.com.br>',
       to: email,
       subject: 'Seu plano personalizado do Instagram está pronto! 🚀',
       html: `

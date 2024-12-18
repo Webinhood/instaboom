@@ -1,33 +1,42 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { Ratelimit } from '@upstash/ratelimit'
-import { Redis } from '@upstash/redis'
 
-// Criar rate limiter
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(5, '1 m'), // 5 requests por minuto
-})
+// Cache simples para rate limiting
+const rateLimitCache = new Map<string, { count: number; timestamp: number }>()
+
+// Limpa o cache a cada hora
+setInterval(() => {
+  rateLimitCache.clear()
+}, 3600000)
 
 export async function middleware(request: NextRequest) {
   const ip = request.ip ?? '127.0.0.1'
 
   // Aplicar rate limiting apenas nas rotas de API
   if (request.nextUrl.pathname.startsWith('/api/')) {
-    const { success, limit, reset, remaining } = await ratelimit.limit(
-      `ratelimit_${ip}`
-    )
+    const now = Date.now()
+    const windowMs = 60000 // 1 minuto
+    const maxRequests = 20 // requisições por minuto
 
-    if (!success) {
+    const current = rateLimitCache.get(ip) ?? { count: 0, timestamp: now }
+    
+    // Reset se passou o tempo da janela
+    if (now - current.timestamp > windowMs) {
+      current.count = 0
+      current.timestamp = now
+    }
+
+    if (current.count >= maxRequests) {
       return new NextResponse('Muitas requisições. Tente novamente em alguns minutos.', {
         status: 429,
         headers: {
-          'X-RateLimit-Limit': limit.toString(),
-          'X-RateLimit-Remaining': remaining.toString(),
-          'X-RateLimit-Reset': reset.toString(),
+          'Retry-After': '60',
         },
       })
     }
+
+    current.count++
+    rateLimitCache.set(ip, current)
   }
 
   // Adicionar headers de segurança

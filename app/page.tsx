@@ -12,8 +12,28 @@ export default function Home() {
   const subtitleColor = 'whiteAlpha.800'
 
   return (
-    <Box bg={bgColor} minH="100vh" py={20}>
-      <Container maxW="container.xl">
+    <Box 
+      bg={bgColor} 
+      minH="100vh" 
+      py={20}
+      position="relative"
+      _after={{
+        content: '""',
+        position: 'absolute',
+        bottom: '0',
+        right: '0',
+        width: '500px',
+        height: '816px',
+        backgroundImage: 'url(/img/instabrabo-mockup2.png)',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'right',
+        opacity: '0.5',
+        zIndex: '0',
+        pointerEvents: 'none'
+      }}
+    >
+      <Container maxW="container.xl" position="relative" zIndex="1">
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems="start">
           {/* Lado Esquerdo - Apresentação */}
           <VStack spacing={8} align="start">
@@ -53,16 +73,18 @@ export default function Home() {
           </VStack>
 
           {/* Lado Direito - Formulário */}
-          <Card 
-            bg={cardBg} 
-            borderWidth="1px" 
-            borderColor={borderColor}
-            w="full"
-          >
-            <CardBody>
-              <SignupForm />
-            </CardBody>
-          </Card>
+          <Box position="relative">
+            <Card 
+              bg={cardBg} 
+              borderWidth="1px" 
+              borderColor={borderColor}
+              w="full"
+            >
+              <CardBody>
+                <SignupForm />
+              </CardBody>
+            </Card>
+          </Box>
         </SimpleGrid>
       </Container>
     </Box>

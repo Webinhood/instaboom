@@ -232,7 +232,7 @@ export default function SignupForm() {
               {...register('descricao')}
               value={formData.descricao}
               onChange={handleChange}
-              placeholder="Conte um pouco sobre seu negócio..."
+              placeholder="Conte um pouco sobre seu negócio, quanto mais detalhes mais personalizado será seu planejamento..."
               bg={inputBg}
               borderColor={inputBorder}
               color={textColor}

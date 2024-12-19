@@ -5,6 +5,7 @@ export interface UserSubmission {
   objetivo: 'vender' | 'autoridade' | 'seguidores' | 'monetizar'
   dificuldade: string
   instagram_link: string
+  aceite_email: boolean
 }
 
 export interface GeneratedPlan {

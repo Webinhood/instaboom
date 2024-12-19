@@ -19,6 +19,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Checkbox,
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -35,6 +36,7 @@ const formSchema = z.object({
   objetivo: z.string().min(1),
   dificuldade: z.string().min(3),
   instagram_link: z.string().min(3),
+  aceite_email: z.boolean(),
 })
 
 export default function SignupForm() {
@@ -59,6 +61,7 @@ export default function SignupForm() {
     objetivo: 'vender',
     dificuldade: '',
     instagram_link: '',
+    aceite_email: false,
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -291,6 +294,19 @@ export default function SignupForm() {
               type="email"
             />
             {errors.email && <Text color="red.500">{errors.email.message}</Text>}
+          </FormControl>
+
+          <FormControl isRequired>
+            <Checkbox
+              {...register('aceite_email')}
+              name="aceite_email"
+              onChange={handleChange}
+              color={textColor}
+              isRequired
+            >
+              Aceito receber e-mails informativos da Webinhood
+            </Checkbox>
+            {errors.aceite_email && <Text color="red.500">{errors.aceite_email.message}</Text>}
           </FormControl>
 
           <Button
